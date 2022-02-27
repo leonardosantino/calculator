@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 98vh;
+}
+
+.calculator {
+    display: grid;
+    grid-template-areas: "display" "body";
+    grid-template-rows:  .75fr;
+    margin: .5rem 6rem;
+    height: 100%;
+    background: linear-gradient(244.38deg, #1b1b1b 8.14%, #181818 27.9%, #0e0e0e 56.94%, #000000 84.11%);
+    border-radius: 30px;
+}
+
+.display {
+    grid-area: display;
+    
+    display: grid;
+    align-items: flex-end;
+    text-align: end;
+
+    padding: 2rem;
+
+    color: #FBFBFB;
+}
+.register, .result {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.body {
+    grid-area: body;
+
+    display: grid;
+    grid-template-areas: "functions ." "numbers operators";
+    grid-template-columns: 1.7fr .3fr;
+    grid-template-rows: .3fr 1.7fr ;
+
+    padding: 2rem;
+
+    background: linear-gradient(30deg, #42869B 8.14%, #2A7DA1 27.9%, #224E91 56.94%, #001853 84.11%);
+    border-radius: 30px;
+}
+
+.functions {
+    grid-area: functions;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.functions, .operators {
+    padding: .5rem;
+
+    background: rgba(5, 5, 5, 0.3);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 30px;
+
+}
+.function, .operator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 3rem;
+    width: 3rem;
+
+    border-radius: 12px;
+    background: rgba(5, 5, 5, 0.3);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), -1px -1px 3px rgba(51, 51, 51, 0.25), inset -1px -1px 3px rgba(49, 49, 49, 0.25);
+
+    color: rgb(58, 58, 255);
+}
+
+.operators {
+    grid-area: operators;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbers {
+    grid-area: numbers;
+   
+    display: grid;
+    align-items: center;
+}
+
+.numbers-lines {
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.number {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 3rem;
+    width: 3rem;
+
+    background: rgba(5, 5, 5, 0.3);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), -1px -1px 3px rgba(51, 51, 51, 0.25), inset -1px -1px 3px rgba(49, 49, 49, 0.25);
+    border-radius: 30px;
+
+    color: #FBFBFB;
+}
+
+.number, .operator, .function, .display {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 39px;
+}
+
+.red {
+    color: rgb(255, 77, 77);
+}
+
+.green {
+    color: rgba(0, 128, 0, 0.486);
+}
+
+.blue {
+    color: rgb(58, 58, 255);
+}
+
+.orange {
+    color: rgba(255, 166, 0, 0.493);
+}
+.hidden {
+    visibility: hidden;
+}
