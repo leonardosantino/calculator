@@ -5,7 +5,6 @@ let clearRegistry = false;
 let clearResult = false;
 let enableOperator = false;
 let enableEqual = false;
-
 let enableDot = [true, false]
 
 export function addNumber(number) {
@@ -19,7 +18,6 @@ export function addNumber(number) {
             clearResult = false;
         }
         enableOperator = true
-
         enableDot[1] = true
 
         result.innerHTML += number;
@@ -37,9 +35,7 @@ export function addDot(dot) {
 
 export function addOperator(operator) {
     return () => {
-
         if (enableOperator) {
-
             operations.push(parseFloat(result.innerHTML), operator);
 
             if (clearRegistry) {
@@ -55,7 +51,6 @@ export function addOperator(operator) {
             clearResult = true;
             enableOperator = false;
             enableEqual = true
-
             enableDot = [true, false]
         }
     }
@@ -63,9 +58,7 @@ export function addOperator(operator) {
 
 export function equalCalc() {
     return () => {
-
         if (enableOperator && enableEqual) {
-
             operations.push(parseFloat(result.innerHTML));
             registry.innerHTML += result.innerHTML
 
@@ -88,9 +81,11 @@ export function equalCalc() {
                     operationType = element;
             });
 
-            if(isNaN(finalResult) || finalResult == 'Infinity')
-                result.innerHTML = '0'
-            else if(finalResult.toString().includes('.'))
+            if (isNaN(finalResult) || finalResult == 'Infinity') {
+                enableOperator = false;
+                result.innerHTML = '<span class="imp-div"> Imp. dividir por zero </span>';
+            }
+            else if (finalResult.toString().includes('.'))
                 result.innerHTML = parseFloat(finalResult).toFixed(2);
             else
                 result.innerHTML = finalResult
@@ -106,7 +101,6 @@ export function equalCalc() {
 
 export function clearDisplay() {
     return () => {
-
         operations = [];
         clearRegistry = false;
         clearResult = false;
