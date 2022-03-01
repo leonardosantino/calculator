@@ -1,5 +1,5 @@
 * {
-    /* margin: 0; */
+    margin: 0;
     box-sizing: border-box;
 }
 body {
@@ -9,7 +9,6 @@ body {
     justify-content: center;
     align-items:stretch;
     
-    /* padding: .25rem; */
     background-image: url(../assets/img/2308303.webp);
     background-position: center;
     background-size: cover;
@@ -180,7 +179,6 @@ body {
 @media (min-width: 0) { 
     body {
         justify-content: initial;
-        margin: 0;
     }
  }
 
