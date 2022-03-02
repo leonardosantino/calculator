@@ -7,4 +7,4 @@ _A simple web calculator with JavaScript_
   
 </div>
 
-*OBS: Você pode utilizar o teclado númerico do computador para digitar e Delete para limpar o display.
+_OBS: Você pode utilizar o teclado númerico do computador para digitar e Delete para limpar o display._
